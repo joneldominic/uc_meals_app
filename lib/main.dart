@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'package:meals_app/screens/home_screen.dart';
+import 'package:meals_app/screens/categories_screen.dart';
 
 import 'package:meals_app/utils/constants/Strings.dart';
 
@@ -14,7 +14,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: HomeScreen(),
+      home: CategoriesScreen(),
     );
   }
 }
