@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
-import 'screens/categories_screen.dart';
-
 import 'utils/constants/strings.dart' as Strings;
 import 'utils/app_routes.dart' as App;
+
+import 'screens/categories_screen.dart';
 
 void main() => runApp(MyApp());
 
@@ -32,21 +32,7 @@ class MyApp extends StatelessWidget {
       ),
       initialRoute: CategoriesScreen.routeName,
       routes: App.routes,
-      // Second Fallback if route is unknown (Good for dynamic routes)
-      // onGenerateRoute: (routeSettings) {
-      //   print(routeSettings.arguments);
-
-      //   switch (routeSettings.name) {
-      //     case '/meal-detail':
-      //       return MaterialPageRoute(builder: (_)=>...);
-      //       break;
-      //     default:
-      //   }
-      // },
-      // Final Fallback in case no routes has been set (404 in case of web...)
-      onUnknownRoute: (routeSettings) {
         return MaterialPageRoute(builder: (_) => CategoriesScreen());
-      },
     );
   }
 }
