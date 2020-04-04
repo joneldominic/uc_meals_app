@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 
 import '../screens/categories_screen.dart';
 import '../screens/favorites_screen.dart';
+import '../widgets/main_drawer.dart';
+
 
 class TabsScreen extends StatefulWidget {
   static const routeName = 'tabs-screen';
@@ -26,6 +28,7 @@ class _TabsScreenState extends State<TabsScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      drawer: MainDrawer(),
       appBar: AppBar(
         title: Text(_pages[_selectedPageIndex]['title']),
       ),
