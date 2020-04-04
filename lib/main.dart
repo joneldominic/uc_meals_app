@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:meals_app/screens/tabs_screen.dart';
 
 import 'utils/constants/strings.dart' as Strings;
 import 'utils/app_routes.dart' as App;
@@ -30,9 +31,11 @@ class MyApp extends StatelessWidget {
               fontWeight: FontWeight.bold,
             )),
       ),
-      initialRoute: CategoriesScreen.routeName,
+      initialRoute: TabsScreen.routeName,
       routes: App.routes,
+      onUnknownRoute: (routeSettings) {
         return MaterialPageRoute(builder: (_) => CategoriesScreen());
+      },
     );
   }
 }
