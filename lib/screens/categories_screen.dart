@@ -2,11 +2,10 @@ import 'package:flutter/material.dart';
 
 import '../widgets/category_item.dart';
 
-import '../utils/constants/strings.dart' as Strings;
 import '../data/dummy_data.dart';
 
 class CategoriesScreen extends StatelessWidget {
-  static const routeName = '/';
+  static const routeName = 'categories-screen';
 
   @override
   Widget build(BuildContext context) {
