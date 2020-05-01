@@ -4,7 +4,6 @@ import '../screens/meal_detail_screen.dart';
 
 import '../models/meal.dart';
 
-
 class MealItem extends StatelessWidget {
   final String id;
   final String title;
@@ -12,6 +11,7 @@ class MealItem extends StatelessWidget {
   final int duration;
   final Complexity complexity;
   final Affordability affordability;
+  final Function removeItem;
 
   MealItem({
     @required this.id,
@@ -20,6 +20,7 @@ class MealItem extends StatelessWidget {
     @required this.duration,
     @required this.complexity,
     @required this.affordability,
+    @required this.removeItem,
   });
 
   String get complexityText {
@@ -49,7 +50,16 @@ class MealItem extends StatelessWidget {
   }
 
   void _selectMeal(BuildContext context) {
-    Navigator.of(context).pushNamed(MealDetailScreen.routeName, arguments: id);
+    Navigator.of(context)
+        .pushNamed(MealDetailScreen.routeName, arguments: id)
+        .then((result) {
+      if (result == null) {
+        return;
+      }
+
+      print(result);
+      removeItem((result as Map<String, String>)["id"]);
+    }); // Future -> gets the result from pushed page
   }
 
   @override
