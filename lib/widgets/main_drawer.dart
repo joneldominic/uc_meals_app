@@ -4,7 +4,6 @@ import '../screens/tabs_screen.dart';
 import '../screens/filters_screen.dart';
 
 class MainDrawer extends StatelessWidget {
-  
   Widget _buildListTile(IconData icon, String title, Function tapHandler) {
     return ListTile(
       leading: Icon(
@@ -46,10 +45,11 @@ class MainDrawer extends StatelessWidget {
             height: 20,
           ),
           _buildListTile(Icons.restaurant, 'Meals', () {
-            Navigator.of(context).pushNamed(TabsScreen.routeName);
+            // Navigator.of(context).pushNamed(TabsScreen.routeName);
+            Navigator.of(context).pushReplacementNamed(TabsScreen.routeName);
           }),
           _buildListTile(Icons.settings, 'Filters', () {
-            Navigator.of(context).pushNamed(FiltersScreen.routeName);
+            Navigator.of(context).pushReplacementNamed(FiltersScreen.routeName);
           }),
         ],
       ),
